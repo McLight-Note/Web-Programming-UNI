@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Famous Sports</title>
+    <style>
+        table, th, td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <h1>Top 5 Famous Sports with Rating > 50</h1>
+    <table>
+        <tr>
+            <th>Sports Name</th>
+            <th>Rating</th>
+        </tr>
+        {% if famous_sports %}
+            {% for sport in famous_sports %}
+                <tr>
+                    <td>{{ sport.name }}</td>
+                    <td>{{ sport.rating }}</td>
+                </tr>
+            {% endfor %}
+        {% else %}
+            <tr>
+                <td colspan="2">No sports found with rating > 50.</td>
+            </tr>
+        {% endif %}
+    </table>
+</body>
+</html> 
