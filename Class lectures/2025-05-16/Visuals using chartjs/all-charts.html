@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>All Chart Types</title>
+    <style>
+        .chart-container {
+            width: 400px;
+            height: 400px;
+            margin: 20px;
+            display: inline-block;
+        }
+        .chart-wrapper {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #333;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="chart-wrapper">
+        <h2>Line Chart</h2>
+        <div class="chart-container">
+            <canvas id="lineChart"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-wrapper">
+        <h2>Bar Chart</h2>
+        <div class="chart-container">
+            <canvas id="barChart"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-wrapper">
+        <h2>Pie Chart</h2>
+        <div class="chart-container">
+            <canvas id="pieChart"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-wrapper">
+        <h2>Doughnut Chart</h2>
+        <div class="chart-container">
+            <canvas id="doughnutChart"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-wrapper">
+        <h2>Radar Chart</h2>
+        <div class="chart-container">
+            <canvas id="radarChart"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-wrapper">
+        <h2>Polar Area Chart</h2>
+        <div class="chart-container">
+            <canvas id="polarAreaChart"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-wrapper">
+        <h2>Bubble Chart</h2>
+        <div class="chart-container">
+            <canvas id="bubbleChart"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-wrapper">
+        <h2>Scatter Chart</h2>
+        <div class="chart-container">
+            <canvas id="scatterChart"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-wrapper">
+        <h2>Mixed Chart</h2>
+        <div class="chart-container">
+            <canvas id="mixedChart"></canvas>
+        </div>
+    </div>
+
+    <div class="chart-wrapper">
+        <h2>Stacked Bar Chart</h2>
+        <div class="chart-container">
+            <canvas id="stackedBarChart"></canvas>
+        </div>
+    </div>
+
+    <!-- javascript -->
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/Chart.min.js"></script>
+
+    <script type="text/javascript">
+        // Common data
+        const labels = ['January', 'February', 'March', 'April', 'May', 'June'];
+        const data = [12, 19, 3, 5, 2, 3];
+        const colors = [
+            'rgba(255, 99, 132, 0.7)',
+            'rgba(54, 162, 235, 0.7)',
+            'rgba(255, 206, 86, 0.7)',
+            'rgba(75, 192, 192, 0.7)',
+            'rgba(153, 102, 255, 0.7)',
+            'rgba(255, 159, 64, 0.7)'
+        ];
+
+        // Line Chart
+        new Chart(document.getElementById('lineChart'), {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Line Chart',
+                    data: data,
+                    borderColor: 'rgb(75, 192, 192)',
+                    tension: 0.1
+                }]
+            }
+        });
+
+        // Bar Chart
+        new Chart(document.getElementById('barChart'), {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Bar Chart',
+                    data: data,
+                    backgroundColor: colors
+                }]
+            }
+        });
+
+        // Pie Chart
+        new Chart(document.getElementById('pieChart'), {
+            type: 'pie',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: colors
+                }]
+            }
+        });
+
+        // Doughnut Chart
+        new Chart(document.getElementById('doughnutChart'), {
+            type: 'doughnut',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: colors
+                }]
+            }
+        });
+
+        // Radar Chart
+        new Chart(document.getElementById('radarChart'), {
+            type: 'radar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Radar Chart',
+                    data: data,
+                    backgroundColor: 'rgba(255, 99, 132, 0.2)',
+                    borderColor: 'rgb(255, 99, 132)',
+                    pointBackgroundColor: 'rgb(255, 99, 132)'
+                }]
+            }
+        });
+
+        // Polar Area Chart
+        new Chart(document.getElementById('polarAreaChart'), {
+            type: 'polarArea',
+            data: {
+                labels: labels,
+                datasets: [{
+                    data: data,
+                    backgroundColor: colors
+                }]
+            }
+        });
+
+        // Bubble Chart
+        new Chart(document.getElementById('bubbleChart'), {
+            type: 'bubble',
+            data: {
+                datasets: [{
+                    label: 'Bubble Chart',
+                    data: [
+                        {x: 20, y: 30, r: 15},
+                        {x: 40, y: 10, r: 10},
+                        {x: 15, y: 20, r: 8},
+                        {x: 30, y: 40, r: 12},
+                        {x: 25, y: 15, r: 9},
+                        {x: 35, y: 25, r: 11}
+                    ],
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)'
+                }]
+            }
+        });
+
+        // Scatter Chart
+        new Chart(document.getElementById('scatterChart'), {
+            type: 'scatter',
+            data: {
+                datasets: [{
+                    label: 'Scatter Chart',
+                    data: [
+                        {x: -10, y: 0},
+                        {x: 0, y: 10},
+                        {x: 10, y: 5},
+                        {x: 20, y: 15},
+                        {x: 30, y: 8},
+                        {x: 40, y: 20}
+                    ],
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)'
+                }]
+            }
+        });
+
+        // Mixed Chart
+        new Chart(document.getElementById('mixedChart'), {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    type: 'bar',
+                    label: 'Bar Dataset',
+                    data: data,
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)'
+                }, {
+                    type: 'line',
+                    label: 'Line Dataset',
+                    data: [5, 15, 8, 12, 7, 10],
+                    borderColor: 'rgb(54, 162, 235)',
+                    fill: false
+                }]
+            }
+        });
+
+        // Stacked Bar Chart
+        new Chart(document.getElementById('stackedBarChart'), {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Dataset 1',
+                    data: [12, 19, 3, 5, 2, 3],
+                    backgroundColor: 'rgba(255, 99, 132, 0.5)'
+                }, {
+                    label: 'Dataset 2',
+                    data: [8, 12, 6, 9, 4, 7],
+                    backgroundColor: 'rgba(54, 162, 235, 0.5)'
+                }]
+            },
+            options: {
+                scales: {
+                    x: {
+                        stacked: true
+                    },
+                    y: {
+                        stacked: true
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html> 
