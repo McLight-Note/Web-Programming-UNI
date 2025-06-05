@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Details</title>
+    <style>
+        table { border-collapse: collapse; width: 50%; margin: 20px auto; }
+        th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+        th { background-color: #f2f2f2; width: 40%; }
+    </style>
+</head>
+<body>
+    <h1>User Details</h1>
+    <table>
+        <tr>
+            <th>ID</th>
+            <td>{{ user.id }}</td>
+        </tr>
+        <tr>
+            <th>First Name</th>
+            <td>{{ user.first_name }}</td>
+        </tr>
+        <tr>
+            <th>Last Name</th>
+            <td>{{ user.last_name }}</td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td>{{ user.age }}</td>
+        </tr>
+        <tr>
+            <th>Gender</th>
+            <td>{{ user.gender }}</td>
+        </tr>
+        <tr>
+            <th>Address</th>
+            <td>{{ user.address }}</td>
+        </tr>
+        <tr>
+            <th>University Name</th>
+            <td>{{ user.university_name }}</td>
+        </tr>
+        <tr>
+            <th>Semester #</th>
+            <td>{{ user.semester_number }}</td>
+        </tr>
+        <tr>
+            <th>GPA</th>
+            <td>{{ user.gpa }}</td>
+        </tr>
+        <tr>
+            <th>Nationality</th>
+            <td>{{ user.nationality }}</td>
+        </tr>
+        <tr>
+            <th>Hobby</th>
+            <td>{{ user.hobby }}</td>
+        </tr>
+    </table>
+</body>
+</html> 
